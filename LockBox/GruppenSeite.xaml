@@ -1,0 +1,22 @@
+﻿<Window x:Class="LockBox.GruppenSeite"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LockBox"
+        xmlns:adorners="http://gu.se/Adorners"
+        mc:Ignorable="d"
+        Title="GruppenSeite" MinHeight="970" Height="970" Width="540" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" >
+    <Grid VerticalAlignment="Top" Height="955">
+        <StackPanel>
+            <Label Template="{StaticResource HeaderWithLogout}"/>
+            <Label Template="{StaticResource secHeader}"/>
+            <Grid Margin="57">
+                <StackPanel VerticalAlignment="Center">
+                    <Button Template="{StaticResource Gruppe}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <Button VerticalAlignment="Bottom" Template="{StaticResource Footer}" Content="Neue Gruppe" Tag="Klicken Sie hier, um eine neue Gruppe zu erstellen:"/>
+    </Grid>
+</Window>

@@ -1,0 +1,127 @@
+﻿<Application x:Class="LockBox.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ControlTemplate x:Key="HeaderNoLogout" TargetType="Label">
+            <Grid Height="116" Background="#060A13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Image Width="65" Height="65" Source="C:\Users\kgora\Desktop\LockBox\LockBox\LockBox\Resources\LockBoxLogo.png" Grid.Column="0"/>
+                <Image Height="54" Source="C:\Users\kgora\Desktop\LockBox\LockBox\LockBox\Resources\LockBoxText.png" Grid.Column="1"/>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="HeaderWithLogout" TargetType="Label">
+            <Grid Height="116" Background="#060A13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Image Width="65" Height="65" Source="C:\Users\kgora\Desktop\LockBox\LockBox\LockBox\Resources\LockBoxLogo.png" Grid.Column="0"/>
+                <Image Height="54" Source="C:\Users\kgora\Desktop\LockBox\LockBox\LockBox\Resources\LockBoxText.png" Grid.Column="1"/>
+                <Button Grid.Column="2" Background="Transparent" BorderThickness="0" Width="69" Height="35" Click="Logout">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Image Source="C:\Users\kgora\Desktop\LockBox\LockBox\LockBox\Resources\Logout_Image.png"/>
+                </Button>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="secHeader" TargetType="Label">
+            <Grid>
+                <Border BorderBrush="White" Background="white" BorderThickness="0">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth=".75" Direction="270" BlurRadius="0.5" Color="#707070" Opacity="1"/>
+                    </Border.Effect>
+                </Border>
+                <StackPanel>
+                    <Label Margin="0,31,0,0" FontFamily="Montserrat" FontSize="33" Content="Wilkommen zurück," HorizontalAlignment="Center"/>
+                    <Label Margin="0,-10,0,31" FontFamily="Montserrat Bold" FontSize="33" Content="Krystian" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </ControlTemplate>
+
+
+        <ControlTemplate x:Key="ButtonG" TargetType="Button">
+            <Border x:Name="border" Background="#7EEDC7" Width="278" Height="50" BorderThickness="0" CornerRadius="8">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="border" Property="Background" Value="#5cdbb0"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+
+        <ControlTemplate x:Key="ButtonB" TargetType="Button">
+            <Border x:Name="border" Background="#060A13" Width="278" Height="50" BorderThickness="0" CornerRadius="8">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="border" Property="Background" Value="#0d1526"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="Gruppe" TargetType="Button">
+            <Grid Height="72" Margin="0,0,0,11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#7EEDC7" Background="white" BorderThickness="3" CornerRadius="8">
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border.Effect>
+                        <DropShadowEffect Direction="-45" BlurRadius="10" Color="Black" Opacity=".1"/>
+                    </Border.Effect>
+                </Border>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Height="30" Source="C:\Users\kgora\Desktop\LockBox\LockBox\LockBox\Resources\Controller.png" Grid.Column="0"/>
+                    <Label Content="Spiele" FontSize="22" VerticalAlignment="Center" FontFamily="Montserrat SemiBold" Grid.Column="1"/>
+                    <Grid Background="#7EEDC7" Opacity=".25" Grid.ColumnSpan="5">
+                    </Grid>
+                </Grid>
+                <Button HorizontalContentAlignment="Right" Background="Transparent" BorderThickness="0" Opacity="1" Grid.Column="1">
+                    <Image Height="38" Source="C:\Users\kgora\Desktop\LockBox\LockBox\LockBox\Resources\trash-fill.png"/>
+                </Button>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="Footer" TargetType="Button">
+            <Grid Height="156">
+                <Border BorderBrush="White" Background="white" BorderThickness="0">
+                    <Border.Effect>
+                        <DropShadowEffect Direction="0" BlurRadius="30" Color="Black" Opacity=".2"/>
+                    </Border.Effect>
+                </Border>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 32.5">
+                    <TextBlock HorizontalAlignment="Center" Width="200" TextAlignment="Center" TextWrapping="Wrap" Margin="0,10" Text="{TemplateBinding Tag}" FontFamily="Montserrat" FontSize="13"/>
+                    <Button Template="{StaticResource ButtonB}" FontSize="14" Content="{TemplateBinding Content}" FontFamily="Montserrat" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+        </ControlTemplate>
+
+    </Application.Resources>
+</Application>
+

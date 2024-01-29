@@ -1,0 +1,46 @@
+﻿<Window x:Class="LockBox.RegisterSeite"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LockBox"
+        xmlns:adorners="http://gu.se/Adorners"
+        mc:Ignorable="d"
+        Title="RegisterSeite" MinHeight="970" Height="970" Width="540" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid VerticalAlignment="Top" Height="955">
+        <StackPanel>
+            <Label Template="{StaticResource HeaderNoLogout}"/>
+            <Grid Margin="57">
+                <Border BorderThickness=".75" BorderBrush="#707070"/>
+                <StackPanel Margin="66,34" VerticalAlignment="Center">
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Neu beim LockBox?" FontFamily="Montserrat Bold" FontSize="36"/>
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,51" Text="Melden Sie sich jetzt an!" FontFamily="Montserrat" FontSize="30"/>
+                    <Grid Height="52" VerticalAlignment="Center" Margin="0,0,0,8">
+                        <Border BorderThickness=".75" BorderBrush="#707070"/>
+                        <TextBox x:Name="xName" Height="24" Margin="10,5,10,0" BorderThickness="0" FontSize="16" FontFamily="Montserrat Regular" adorners:Watermark.Text="Benutzername"/>
+                    </Grid>
+
+                    <Grid Height="52" VerticalAlignment="Center" Margin="0,0,0,8">
+                        <Border BorderThickness=".75" BorderBrush="#707070"/>
+                        <TextBox x:Name="xMail" Height="24" Margin="10,5,10,0" BorderThickness="0" FontSize="16" FontFamily="Montserrat Regular" adorners:Watermark.Text="E-Mail Adresse"/>
+                    </Grid>
+
+                    <Grid Height="52" VerticalAlignment="Center" Margin="0,0,0,8">
+                        <Border BorderThickness=".75" BorderBrush="#707070"/>
+                        <PasswordBox x:Name="xPass" Height="24" Margin="10,5,10,0" BorderThickness="0" FontSize="16" FontFamily="Montserrat Regular" adorners:Watermark.Text="Passwort"/>
+                    </Grid>
+
+                    <Grid Height="52" VerticalAlignment="Center" Margin="0,0,0,34">
+                        <Border BorderThickness=".75" BorderBrush="#707070"/>
+                        <PasswordBox x:Name="xPassConfirm" Height="24" Margin="10,5,10,0" BorderThickness="0" FontSize="16" FontFamily="Montserrat Regular" adorners:Watermark.Text="Passwort wiederholen"/>
+                    </Grid>
+                    <Button Template="{StaticResource ButtonG}" Click="Registrieren" Content="Registrieren" FontFamily="Montserrat" FontSize="14"/>
+                </StackPanel>
+
+
+            </Grid>
+        </StackPanel>
+        <Button VerticalAlignment="Bottom" Template="{StaticResource Footer}" Click="Anmelden" Content="Anmelden" Tag="Wenn Sie schon ein Konto haben, melden Sie sich hier an"/>
+
+    </Grid>
+</Window>

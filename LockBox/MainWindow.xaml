@@ -1,0 +1,39 @@
+﻿<Window x:Class="LockBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LockBox"
+        xmlns:adorners="http://gu.se/Adorners"
+        mc:Ignorable="d"
+        Title="LoginSeite" MinHeight="970" Height="970" Width="540" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid VerticalAlignment="Top" Height="955">
+        <StackPanel>
+            <Label Template="{StaticResource HeaderNoLogout}"/>
+            <Grid Margin="57">
+                <Border BorderThickness=".75" BorderBrush="#707070"/>
+                <StackPanel Margin="66,34" VerticalAlignment="Center">
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="LockBox," FontFamily="Montserrat Bold" FontSize="36"/>
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,51" Text="Passwörter sicher und schnell gemacht!" FontFamily="Montserrat" FontSize="30"/>
+
+                    <Grid x:Name="xLoginError" VerticalAlignment="Center" Visibility="Collapsed" Margin="0,0,0,16">
+                        <Border BorderThickness="1.5" BorderBrush="#EE5E5E"/>
+                        <TextBlock Text="Es gab ein Problem beim Einloggen. Bitte überprüfe deine Benutzername/E-Mail und Passwort und versuche es erneut." TextWrapping="Wrap" Margin="10,10" FontSize="14" Foreground="#EE5E5E" FontFamily="Montserrat Regular"/>
+                    </Grid>
+
+                    <Grid Height="52" VerticalAlignment="Center" Margin="0,0,0,8">
+                        <Border BorderThickness=".75" BorderBrush="#707070"/>
+                        <TextBox x:Name="xNameEmail" Height="24" Margin="10,5,10,0" BorderThickness="0" FontSize="16" FontFamily="Montserrat Regular" adorners:Watermark.Text="Name oder E-Mail Adresse"/>
+                    </Grid>
+
+                    <Grid Height="52" VerticalAlignment="Center" Margin="0,0,0,34">
+                        <Border BorderThickness=".75" BorderBrush="#707070"/>
+                        <PasswordBox x:Name="xPasswort" Height="24" Margin="10,5,10,0" BorderThickness="0" FontSize="16" FontFamily="Montserrat Regular" adorners:Watermark.Text="Passwort"/>
+                    </Grid>
+                    <Button Template="{StaticResource ButtonG}" Click="Anmelden" Content="Anmelden" FontFamily="Montserrat" FontSize="14"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <Button VerticalAlignment="Bottom" Template="{StaticResource Footer}" Click="Registrieren" Content="Registrieren" Tag="Haben Sie noch kein Konto? Registrieren Sie sich Hier"/>
+    </Grid>
+</Window>
